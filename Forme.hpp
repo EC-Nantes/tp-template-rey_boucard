@@ -15,30 +15,32 @@
 
 using namespace std;
 
-template<typename T>
+template<typename T, typename S>
 class Forme;
 
-template<typename T>
-std::ostream& operator<<(std::ostream &, Forme<T> const&);
+template<typename T, typename S>
+std::ostream& operator<<(std::ostream &, Forme<T, S> const&);
 
-template<typename T>
+template<typename T, typename S>
 class Forme {
 protected:
     Point<T> pt;
 public:
 	Forme(Point<T> pt);
+    virtual S perimetre() = 0;
+    virtual S surface() = 0;
 
-	friend ostream& operator<< <T>(ostream& os, Forme<T> const &R);
+	friend ostream& operator<< <T, S>(ostream& os, Forme<T, S> const &R);
 };
 
-template<typename T>
-Forme<T>::Forme(Point<T> pt){
+template<typename T, typename S>
+Forme<T, S>::Forme(Point<T> pt){
     this->pt = pt;
 }
 
-template<typename T>
-ostream& operator<< (ostream& os, Forme<T> const &forme){
-	os << "Centre de la forme :\n" << endl;
+template<typename T, typename S>
+ostream& operator<< (ostream& os, Forme<T, S> const &forme){
+	os << "Centre de la forme :" ;
     os << forme.pt << endl;
 	return os;
 }
