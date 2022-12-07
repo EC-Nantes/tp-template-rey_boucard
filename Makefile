@@ -1,5 +1,5 @@
-OBJS	= main.o Point.o
-SOURCE	= main.cpp Point.cpp
+OBJS	= main.o
+SOURCE	= main.cpp
 HEADER	= Point.hpp Forme.hpp
 OUT	= main
 CC	 = g++
@@ -11,9 +11,6 @@ all: $(OBJS)
 
 main.o: main.cpp
 	$(CC) $(FLAGS) main.cpp -std=c11
-
-Point.o: Point.cpp
-	$(CC) $(FLAGS) Point.cpp -std=c11
 
 clean:
 	rm -f $(OBJS) $(OUT)

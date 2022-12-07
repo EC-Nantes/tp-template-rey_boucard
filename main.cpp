@@ -20,7 +20,7 @@ int main() {
    cout << "X : " << toc.getX() << "  Y : " << toc.getY() << endl;
    cout << truc;
 
-   Forme<int> carre(truc);
-   cout << carre << endl;
+   //Forme<int> carre(truc);
+   //cout << carre << endl;
    return 0;
 }

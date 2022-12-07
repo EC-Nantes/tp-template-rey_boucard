@@ -15,6 +15,12 @@
 using namespace std;
 
 template<typename T>
+class Point;
+
+template<typename T>
+std::ostream& operator<<(std::ostream &, Point<T> const&);
+
+template<typename T>
 class Point {
 protected:
     T x;
@@ -22,13 +28,14 @@ protected:
 public:
 	Point(T _x, T _y);
     Point(Point<T> const &);
+    Point(void);
     T getX() const;
     void setX(T x);
     T getY() const;
     void setY(T x);
     void translater(T a, T b);
 
-	friend ostream& operator<< (ostream& os, Point<T> const &R);
+	friend std::ostream& operator<< <T>(std::ostream& os, Point<T> const &R);
 };
 
 template<typename T>
@@ -41,6 +48,12 @@ template<typename T>
 Point<T>::Point(Point<T> const & point){
     this->x = point.getX();
     this->y = point.getY();
+}
+
+template<typename T>
+Point<T>::Point(void){
+    this->x = (T) 0;
+    this->y = (T) 0;
 }
 
 template<typename T>
@@ -70,7 +83,7 @@ void Point<T>::translater(T a, T b){
 }
 
 template<typename T>
-ostream& operator<< (ostream& os, Point<T> const &point){
+std::ostream& operator<<(std::ostream& os, Point<T> const &point){
 	os << "Coordonnees :\n" << "x : " << point.getX() << "  y : " << point.getY() << endl;
 	return os;
 }

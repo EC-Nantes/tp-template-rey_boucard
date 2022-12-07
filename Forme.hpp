@@ -16,13 +16,19 @@
 using namespace std;
 
 template<typename T>
+class Forme;
+
+template<typename T>
+std::ostream& operator<<(std::ostream &, Forme<T> const&);
+
+template<typename T>
 class Forme {
 protected:
     Point<T> pt;
 public:
 	Forme(Point<T> pt);
 
-	friend ostream& operator<< (ostream& os, Forme const &R);
+	friend ostream& operator<< <T>(ostream& os, Forme<T> const &R);
 };
 
 template<typename T>
