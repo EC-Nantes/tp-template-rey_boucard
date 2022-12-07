@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "Point.hpp"
+#include "Forme.hpp"
 
 using namespace std;
 
@@ -18,5 +19,8 @@ int main() {
    Point<int> toc(truc);
    cout << "X : " << toc.getX() << "  Y : " << toc.getY() << endl;
    cout << truc;
+
+   Forme<int> carre(truc);
+   cout << carre << endl;
    return 0;
 }

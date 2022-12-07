@@ -11,8 +11,6 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
-#include <vector>
-#include <map>
 
 using namespace std;
 
@@ -30,7 +28,7 @@ public:
     void setY(T x);
     void translater(T a, T b);
 
-	friend ostream& operator<< <T>(ostream& os, Point<T> const &R);
+	friend ostream& operator<< (ostream& os, Point<T> const &R);
 };
 
 template<typename T>
@@ -72,7 +70,7 @@ void Point<T>::translater(T a, T b){
 }
 
 template<typename T>
-ostream& operator<<(ostream& os, Point<T> const &point){
+ostream& operator<< (ostream& os, Point<T> const &point){
 	os << "Coordonnees :\n" << "x : " << point.getX() << "  y : " << point.getY() << endl;
 	return os;
 }
