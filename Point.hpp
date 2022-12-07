@@ -84,7 +84,7 @@ void Point<T>::translater(T a, T b){
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, Point<T> const &point){
-	os << "Coordonnees :\n" << "x : " << point.getX() << "  y : " << point.getY() << endl;
+	os << "coordonnees :" << "x : " << point.getX() << "  y : " << point.getY();
 	return os;
 }
 
