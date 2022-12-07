@@ -1,6 +1,6 @@
 OBJS	= main.o
 SOURCE	= main.cpp
-HEADER	= Point.hpp Forme.hpp
+HEADER	= Point.hpp Forme.hpp Rectangle.hpp
 OUT	= main
 CC	 = g++
 FLAGS	 = -g -c -Wall

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Point.hpp"
 #include "Forme.hpp"
+#include "Rectangle.hpp"
 
 using namespace std;
 
@@ -20,7 +21,11 @@ int main() {
    cout << "X : " << toc.getX() << "  Y : " << toc.getY() << endl;
    cout << truc;
 
-   Forme<int> carre(truc);
-   cout << carre << endl;
+   Rectangle<int, double> carre(truc, 2, 5);
+   cout << carre.perimetre() << endl;
+   cout << carre.surface() << endl;
+   //cout << carre << endl;
+
+
    return 0;
 }
